@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>松本和晃 制作ノート</title>
@@ -30,6 +28,10 @@
   --body:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"Consolas",monospace;
   --head-h:64px;
+  --board:#1E5B3F;
+  --board-ink:#FFFFFF;
+  --concrete:#9DA4A1;
+  --crack:#3E4442;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -204,7 +206,21 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
 .flow .foldt{fill:var(--chalk-ink)}
 .flow .scan{fill:var(--steel);opacity:.18}
 .flow .fly{fill:var(--paper);stroke:var(--steel)}
+/* B-5 の黒板図 */
+.ebd .tbl{fill:var(--paper);stroke:var(--line)}
+.ebd .th{fill:var(--steel-soft);stroke:var(--line)}
+.ebd .off{fill:var(--ground);stroke:var(--line)}
+.ebd .on{fill:#FFF3C4;stroke:var(--line)}
+.ebd .tx{font-size:11px;fill:var(--ink)}
+.ebd .tx.on-t{fill:#1B2427}
+.ebd .tx.dim{fill:var(--ink-2)}
+.ebd .ph{fill:var(--concrete)}
+.ebd .ck{fill:none;stroke:var(--crack);stroke-width:2;stroke-linejoin:round}
+.ebd .bb rect{fill:var(--board);stroke:var(--board-ink);stroke-width:.8}
+.ebd .bb text{fill:var(--board-ink);font-family:var(--body)}
 @media (prefers-reduced-motion:no-preference){
+  .ebd .bb{animation:bdIn 5s ease-out infinite}
+  .ebd .bb.b2{animation-delay:.6s}
   .flow .scan{animation:scan 6s linear infinite}
   .flow .fly{animation:fly 6s ease-in-out infinite;opacity:0}
   .flow .fly.f2{animation-delay:1.2s}.flow .fly.f3{animation-delay:2.4s}
@@ -212,13 +228,14 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
   .card:hover{transform:translateY(-2px)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@keyframes bdIn{0%,12%{opacity:0;transform:translateY(6px)}24%,88%{opacity:1;transform:none}100%{opacity:0}}
 @keyframes scan{0%{transform:translateX(0)}70%,100%{transform:translateX(448px)}}
 @keyframes fly{0%{opacity:0;transform:translate(0,0)}8%{opacity:1}45%{opacity:1;transform:translate(var(--dx),282px)}55%,100%{opacity:0;transform:translate(var(--dx),282px)}}
 
 /* ---------- できること ---------- */
 .skills{padding-block:72px 24px;display:flex;flex-direction:column;gap:22px}
 .matrix-box{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:8px}
-.matrix{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}
+.matrix{width:100%;min-width:860px;border-collapse:collapse;font-size:14px}
 .matrix thead tr{border-bottom:2px solid var(--ink)}
 .matrix th[scope="col"]{padding:14px 4px;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--steel);width:68px}
 .matrix th[scope="col"]:first-child{text-align:left;padding:14px 20px;font-family:var(--body);font-size:13px;font-weight:700;color:var(--ink-2);width:auto}
@@ -299,8 +316,8 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
       <a class="btn ghost" href="#skills">できることを見る</a>
     </div>
     <dl class="facts">
-      <div><dt>作ったもの</dt><dd>6<small>件</small></dd></div>
-      <div><dt>実際の業務で使用中</dt><dd>4<small>件</small></dd></div>
+      <div><dt>作ったもの</dt><dd>8<small>件</small></dd></div>
+      <div><dt>うち業務用</dt><dd>5<small>件</small></dd></div>
       <div><dt>資格</dt><dd class="txt">道路橋点検士<br>生成AIパスポート</dd></div>
     </dl>
   </div>
@@ -314,7 +331,7 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
 
 <section class="band" id="results" aria-labelledby="res-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="res-h">導入して変わったこと</h2><p>業務用の4件。数字はすべて実際の業務での結果です</p></div>
+    <div class="sec-head"><h2 id="res-h">導入して変わったこと</h2><p>業務用のうち4件。数字はすべて実際の業務での結果です</p></div>
     <div class="results">
       <a href="#case-b1"><span class="w">B-1 進捗の共有</span><span class="v">約15秒</span><span class="d">で全員の画面に反映</span><span class="was">以前：紙で管理し、古い情報が残りがち</span></a>
       <a href="#case-b2"><span class="w">B-2 位置図の作成</span><span class="v">その場で</span><span class="d">一覧表を選ぶだけで地図資料が完成</span><span class="was">以前：手作業で、丸1日かかることも</span></a>
@@ -328,9 +345,9 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
   <div class="works-top">
     <div class="sec-head"><h2 id="works-h">AIと作ったもの</h2><p>カードを選ぶと、困りごと・工夫・成果の詳しい説明へ移動します</p></div>
     <div class="filter" role="group" aria-label="作品の種類で絞り込む">
-      <button type="button" id="flt-all" data-f="all" aria-pressed="true">すべて（6）</button>
-      <button type="button" id="flt-biz" data-f="biz" aria-pressed="false">業務用（4）</button>
-      <button type="button" id="flt-fun" data-f="fun" aria-pressed="false">個人制作（2）</button>
+      <button type="button" id="flt-all" data-f="all" aria-pressed="true">すべて（8）</button>
+      <button type="button" id="flt-biz" data-f="biz" aria-pressed="false">業務用（5）</button>
+      <button type="button" id="flt-fun" data-f="fun" aria-pressed="false">個人制作（3）</button>
     </div>
   </div>
   <div class="cards">
@@ -363,6 +380,17 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
         <dl><dt>困りごと</dt><dd>明細を足しても請求額と合わない</dd><dt class="r">成果</dt><dd class="r">請求額と1円単位で照合</dd></dl>
         <ul class="chips"><li>Python</li><li>openpyxl</li><li>自動テスト</li></ul></div>
     </a>
+    <a class="card" href="#case-b5" data-kind="biz">
+      <div class="th"><svg class="ebd" role="img" aria-label="点検写真の右下に、橋梁名・径間・部材・損傷の種類を書いた緑の黒板が重なった図" viewBox="0 0 320 200">
+        <rect class="ph" x="0" y="0" width="320" height="200"/>
+        <path class="ck" d="M18 40 L70 62 L96 58 L150 92 L176 88 L214 120 M96 58 L104 30 M150 92 L140 128"/>
+        <g class="bb"><rect x="168" y="112" width="140" height="78"/><line x1="168" y1="132" x2="308" y2="132" stroke="#FFFFFF" stroke-width=".8"/><line x1="168" y1="152" x2="308" y2="152" stroke="#FFFFFF" stroke-width=".8"/><line x1="206" y1="112" x2="206" y2="152" stroke="#FFFFFF" stroke-width=".8"/>
+          <text x="174" y="126" font-size="10">橋梁名</text><text x="212" y="126" font-size="10">〇〇線1号橋</text><text x="174" y="146" font-size="10">部材</text><text x="212" y="146" font-size="10">Mg01</text><text x="238" y="178" font-size="17" text-anchor="middle">ひびわれ</text></g>
+      </svg><span class="code">B-5</span><span class="kind biz">業務用</span></div>
+      <div class="bd"><h3>電子黒板合成ツール</h3>
+        <dl><dt>困りごと</dt><dd>写真を貼り終えたあとに、急に「黒板を入れて」と指示が来る</dd><dt class="r">成果</dt><dd class="r">貼った写真にあとから黒板を付け、急な要望にも簡単に対応</dd></dl>
+        <ul class="chips"><li>Excel VBA</li><li>データ記録様式</li></ul></div>
+    </a>
     <a class="card" href="#case-p1" data-kind="fun">
       <div class="th"><img src="img/stamp.webp" alt="スタンプと集中線で飾った風景写真のスマホ画面" width="390" height="760" loading="lazy" style="object-position:0 52%"><span class="code">P-1</span><span class="kind fun">個人制作</span></div>
       <div class="bd"><h3>画像加工Pro</h3>
@@ -374,6 +402,12 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
       <div class="bd"><h3>スタンプ工房</h3>
         <dl><dt>内容</dt><dd>写真の切り抜き・手描き・ロゴ・ハンコからスタンプを自作</dd><dt class="r">使い道</dt><dd class="r">LINEスタンプ申請用ZIPやシール印刷に書き出し</dd></dl>
         <ul class="chips"><li>Canvas</li><li>MediaPipe</li><li>PWA</li></ul></div>
+    </a>
+    <a class="card" href="#case-p3" data-kind="fun">
+      <div class="th"><img src="img/score.webp" alt="4人の点数と順位が並んだ得点ボードのスマホ画面" width="390" height="760" loading="lazy" style="object-position:0 40%"><span class="code">P-3</span><span class="kind fun">個人制作</span></div>
+      <div class="bd"><h3>とくてんボード</h3>
+        <dl><dt>内容</dt><dd>ボードゲームの点数を記録し、順位をその場で表示</dd><dt class="r">工夫</dt><dd class="r">UNO・スカルキングなどは点数を自動で計算</dd></dl>
+        <ul class="chips"><li>JavaScript</li><li>自動テスト</li><li>PWA</li></ul></div>
     </a>
   </div>
 </section>
@@ -543,6 +577,61 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
     </div>
   </article>
 
+  <article class="case" id="case-b5">
+    <div class="case-head">
+      <p class="case-meta"><span class="code">B-5</span>業務用 ／ 写真台帳</p>
+      <h3>電子黒板合成ツール</h3>
+      <p class="lede">点検調書（データ記録様式 その１０ 損傷写真）の写真に、橋梁名・径間・部材・損傷の種類を書いた電子黒板を付けるExcelのツールです。</p>
+    </div>
+    <ol class="flow-steps" aria-label="困りごとから成果まで">
+      <li class="st"><b>1 困りごと</b>台帳に写真を貼り終えたあとで、急に「写真に黒板を入れてほしい」と指示が来た。</li>
+      <li class="ar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"/></svg></li>
+      <li class="st k"><b>2 工夫</b>写真の上の欄（写真番号・径間・部材・損傷の種類）を読み取って黒板を作る。部材名は記号（主桁→Mg、竪壁→Ac など）に自動で置き換える。</li>
+      <li class="ar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"/></svg></li>
+      <li class="st r"><b>3 成果</b><span>貼り終えた写真にあとから黒板を付けられ、<strong>急な要望にも簡単に対応できる</strong>。台帳を選んでボタンを順に押すだけで、黒板は何度でも付け直せる。</span></li>
+    </ol>
+    <div class="case-body">
+      <figure class="case-fig">
+        <svg class="flow ebd" viewBox="0 0 560 400" role="img" aria-labelledby="ebdT">
+          <title id="ebdT">処理の流れ：黒板設定シートで写真ごとに黒板の有無・位置・大きさを決めると、台帳の損傷写真に電子黒板が重なる</title>
+          <text class="lab" x="24" y="28">1　黒板設定（写真ごとに 入れる／位置／大きさ）</text>
+          <rect class="th" x="24" y="40" width="512" height="24"/>
+          <text class="tx" x="34" y="56">写真</text><text class="tx" x="84" y="56">部材</text><text class="tx" x="204" y="56">損傷の種類</text><text class="tx" x="334" y="56">黒板</text><text class="tx" x="404" y="56">位置</text><text class="tx" x="464" y="56">大きさ</text>
+          <rect class="tbl" x="24" y="64" width="512" height="24"/>
+          <rect class="on" x="324" y="64" width="212" height="24"/>
+          <text class="tx" x="34" y="80">1</text><text class="tx" x="84" y="80">主桁 01（Mg01）</text><text class="tx" x="204" y="80">ひびわれ</text><text class="tx on-t" x="334" y="80">入れる</text><text class="tx on-t" x="404" y="80">右下</text><text class="tx on-t" x="464" y="80">40%</text>
+          <rect class="off" x="24" y="88" width="512" height="24"/>
+          <text class="tx dim" x="34" y="104">2</text><text class="tx dim" x="84" y="104">主桁 01（Mg01）</text><text class="tx dim" x="204" y="104">ひびわれ</text><text class="tx dim" x="334" y="104">入れない</text>
+          <rect class="tbl" x="24" y="112" width="512" height="24"/>
+          <rect class="on" x="324" y="112" width="212" height="24"/>
+          <text class="tx" x="34" y="128">3</text><text class="tx" x="84" y="128">竪壁 01（Ac01）</text><text class="tx" x="204" y="128">剥離・鉄筋露出</text><text class="tx on-t" x="334" y="128">入れる</text><text class="tx on-t" x="404" y="128">左上</text><text class="tx on-t" x="464" y="128">30%</text>
+          <path class="arrow" d="M280 146 V168"/><path class="head" d="M274 164 L280 174 L286 164 Z"/>
+          <text class="lab" x="24" y="196">2　台帳（その１０）の写真に黒板が重なる</text>
+          <rect class="ph" x="24" y="208" width="252" height="172" rx="2"/>
+          <path class="ck" d="M36 238 L90 262 L118 256 L170 290 L196 284 L236 316 M118 256 L128 226 M170 290 L160 330"/>
+          <g class="bb"><rect x="152" y="302" width="118" height="72"/><line x1="152" y1="320" x2="270" y2="320" stroke="#FFFFFF" stroke-width=".8"/><line x1="152" y1="338" x2="270" y2="338" stroke="#FFFFFF" stroke-width=".8"/><line x1="184" y1="302" x2="184" y2="338" stroke="#FFFFFF" stroke-width=".8"/><line x1="200" y1="320" x2="200" y2="338" stroke="#FFFFFF" stroke-width=".8"/><line x1="226" y1="320" x2="226" y2="338" stroke="#FFFFFF" stroke-width=".8"/>
+            <text x="156" y="315" font-size="9">橋梁名</text><text x="190" y="315" font-size="9.5">〇〇線1号橋</text><text x="156" y="333" font-size="9">径間</text><text x="188" y="333" font-size="9.5">1</text><text x="204" y="333" font-size="9">部材</text><text x="232" y="333" font-size="9.5">Mg01</text><text x="211" y="363" font-size="16" text-anchor="middle">ひびわれ</text></g>
+          <rect class="ph" x="290" y="208" width="246" height="172" rx="2"/>
+          <path class="ck" d="M330 300 L372 286 L410 318 L452 304 L496 336 L520 330 M410 318 L404 360"/>
+          <rect x="430" y="240" width="70" height="26" rx="2" fill="#7B5A45" opacity=".7"/>
+          <g class="bb b2"><rect x="296" y="214" width="100" height="62"/><line x1="296" y1="230" x2="396" y2="230" stroke="#FFFFFF" stroke-width=".8"/><line x1="296" y1="246" x2="396" y2="246" stroke="#FFFFFF" stroke-width=".8"/><line x1="324" y1="214" x2="324" y2="246" stroke="#FFFFFF" stroke-width=".8"/>
+            <text x="299" y="226" font-size="8">橋梁名</text><text x="328" y="226" font-size="8.5">〇〇線1号橋</text><text x="299" y="242" font-size="8">部材</text><text x="328" y="242" font-size="8.5">Ac01</text><text x="346" y="266" font-size="11" text-anchor="middle">剥離・鉄筋露出</text></g>
+        </svg>
+        <figcaption>業務の台帳には実在の橋梁名が入るため、画面写真の代わりに処理の流れを図にしています。橋梁名はサンプルです。</figcaption>
+      </figure>
+      <div class="case-side">
+        <div><h4>主な機能</h4>
+          <ul class="feat">
+            <li>写真ごとに、黒板を入れる／入れない、位置（四隅）、大きさ（写真の幅に対する％）を選べる。空欄の写真は既定値を使う</li>
+            <li>「電子黒板を外す」で写真だけに戻せる。「画像に合成」は元に戻せないので、最後に使う手順に分けた</li>
+            <li>マクロはツール側のブックだけに入れ、台帳ファイルにはマクロを入れない</li>
+            <li>台帳が見つからない、シートが保護されているなど、黒板を付けられないときは理由を表示する</li>
+          </ul></div>
+        <ul class="chips" aria-label="使った技術"><li>Excel VBA</li><li>データ記録様式（その１０）</li><li>部材記号（付表）</li></ul>
+      </div>
+    </div>
+  </article>
+
   <article class="case" id="case-p1">
     <div class="case-head">
       <p class="case-meta"><span class="code">P-1</span>個人制作 ／ 写真加工</p>
@@ -616,22 +705,59 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
       </div>
     </div>
   </article>
+
+  <article class="case" id="case-p3">
+    <div class="case-head">
+      <p class="case-meta"><span class="code">P-3</span>個人制作 ／ ボードゲーム</p>
+      <h3>とくてんボード</h3>
+      <p class="lede">ボードゲームの点数をスマホでかんたんに記録し、いまの順位と結果発表まで見せるアプリです。</p>
+    </div>
+    <ol class="flow-steps" aria-label="内容からつながりまで">
+      <li class="st"><b>1 内容</b>メンバーとルールを選び、名前をタップして点数を入れる。順位はその場で並び替わり、最後は結果発表。</li>
+      <li class="ar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"/></svg></li>
+      <li class="st k"><b>2 工夫</b>UNO・スカルキング・パパヨー・波乱と海原は、それぞれの決まりに合わせて点数を自動で計算する。計算は自動テストで毎回確かめる。</li>
+      <li class="ar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"/></svg></li>
+      <li class="st r"><b>3 つながり</b><span><strong>スタンプ工房（P-2）</strong>で作ったアイコンを、メンバーのアイコンとして使える。</span></li>
+    </ol>
+    <div class="case-body">
+      <figure class="case-fig phone-fig">
+        <div class="phone"><picture><source srcset="img/score.webp" media="(prefers-reduced-motion: reduce)"><img src="img/score_anim.webp" alt="とくてんボードのスマホ画面。4人に順に点数を入れると、いまの順位が並び替わる" width="390" height="760" loading="lazy"></picture></div>
+        <figcaption>4人に続けて点数を入れると、順位がその場で並び替わります。名前は初期設定のままです。</figcaption>
+      </figure>
+      <div class="case-side">
+        <div><h4>主な機能</h4>
+          <ul class="feat">
+            <li>数字パッドと ±1・±5・±10 のボタンで点数を入れ、「つぎは〇〇」で次の人へ続けて入力できる</li>
+            <li>得点ボード（ラウンドごと・累計）とグラフ。まちがえたら「もどす」で取り消せる</li>
+            <li>はじめてガイドとルールの説明つき。これまでのゲームと実績も残る</li>
+          </ul>
+          <details class="more"><summary>ほかの機能（3件）</summary>
+            <ul class="feat">
+              <li>おまけ：計算・タイマー・サイコロと、ミニゲーム3つ（パパヨー叩き・神経衰弱・パパヨーvsスカルキング）</li>
+              <li>お題カード：ジャスト・ワンなど向けに、6つのジャンルからお題を出す</li>
+              <li>スマホのホーム画面に追加でき、通信がないときでも開ける</li>
+            </ul>
+          </details></div>
+        <ul class="chips" aria-label="使った技術"><li>HTML / JavaScript</li><li>自動テスト</li><li>ホーム画面に追加（PWA）</li><li>スマホ対応</li></ul>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="wrap skills" id="skills" aria-labelledby="skills-h">
   <div class="sec-head"><h2 id="skills-h">できること</h2><p>コードはClaude Codeが書きます。自分の役割は次の4つで、●はその力を示している作品です</p></div>
   <div class="matrix-box">
     <table class="matrix">
-      <thead><tr><th scope="col">スキル</th><th scope="col">B-1</th><th scope="col">B-2</th><th scope="col">B-3</th><th scope="col">B-4</th><th scope="col">P-1</th><th scope="col">P-2</th></tr></thead>
+      <thead><tr><th scope="col">スキル</th><th scope="col">B-1</th><th scope="col">B-2</th><th scope="col">B-3</th><th scope="col">B-4</th><th scope="col">B-5</th><th scope="col">P-1</th><th scope="col">P-2</th><th scope="col">P-3</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><b>1　現場の困りごとを整理する</b><span>紙の進捗表、手作業の地図、写真の振り分けなど、時間がかかる作業を見つけて言葉にする</span></th>
-          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dot" role="img" aria-label="B-2で発揮"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dot" role="img" aria-label="B-4で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td></tr>
-        <tr><th scope="row"><b>2　何を作るかを決める</b><span>社内LAN版とGoogle版を用意（B-1）、元の写真は動かさない（B-3）、写真を端末の外に送らない（P-1・P-2）</span></th>
-          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="P-1で発揮"></span></td><td><span class="dot" role="img" aria-label="P-2で発揮"></span></td></tr>
-        <tr><th scope="row"><b>3　実際のデータで確かめる</b><span>請求額と1円単位で照合・26項目の自動テスト（B-4）、読み取りが怪しい写真に印（B-3）</span></th>
-          <td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dot" role="img" aria-label="B-4で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td></tr>
-        <tr><th scope="row"><b>4　ほかの人が使える形に仕上げる</b><span>承認制の利用者登録（B-1）、ダブルクリックで実行（B-3）、使い方説明書の改訂（P-2）</span></th>
-          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="P-2で発揮"></span></td></tr>
+        <tr><th scope="row"><b>1　現場の困りごとを整理する</b><span>紙の進捗表、手作業の地図、写真の振り分け、写真ごとの黒板付けなど、時間がかかる作業を見つけて言葉にする</span></th>
+          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dot" role="img" aria-label="B-2で発揮"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dot" role="img" aria-label="B-4で発揮"></span></td><td><span class="dot" role="img" aria-label="B-5で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td></tr>
+        <tr><th scope="row"><b>2　何を作るかを決める</b><span>社内LAN版とGoogle版を用意（B-1）、元の写真は動かさない（B-3）、台帳にマクロを入れない（B-5）、写真を端末の外に送らない（P-1・P-2）</span></th>
+          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-5で発揮"></span></td><td><span class="dot" role="img" aria-label="P-1で発揮"></span></td><td><span class="dot" role="img" aria-label="P-2で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td></tr>
+        <tr><th scope="row"><b>3　実際のデータで確かめる</b><span>請求額と1円単位で照合・26項目の自動テスト（B-4）、読み取りが怪しい写真に印（B-3）、点数計算の自動テスト（P-3）</span></th>
+          <td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dot" role="img" aria-label="B-4で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="P-3で発揮"></span></td></tr>
+        <tr><th scope="row"><b>4　ほかの人が使える形に仕上げる</b><span>承認制の利用者登録（B-1）、ダブルクリックで実行（B-3）、ボタンを順に押す操作画面（B-5）、使い方説明書の改訂（P-2）、はじめてガイド（P-3）</span></th>
+          <td><span class="dot" role="img" aria-label="B-1で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-3で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="B-5で発揮"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dot" role="img" aria-label="P-2で発揮"></span></td><td><span class="dot" role="img" aria-label="P-3で発揮"></span></td></tr>
       </tbody>
     </table>
   </div>
@@ -650,7 +776,8 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
 <section class="wrap tech" aria-labelledby="tech-h">
   <div class="sec-head"><h2 id="tech-h">使った技術</h2></div>
   <div class="tech-grid">
-    <div><b>Web画面</b><span class="it">HTML / JavaScript ・ Canvas ・ Leaflet ・ SheetJS</span><span class="wk">使った作品：B-1 B-2 B-4 P-1 P-2</span></div>
+    <div><b>Web画面</b><span class="it">HTML / JavaScript ・ Canvas ・ Leaflet ・ SheetJS</span><span class="wk">使った作品：B-1 B-2 B-4 P-1 P-2 P-3</span></div>
+    <div><b>Excel</b><span class="it">VBA（マクロ）</span><span class="wk">使った作品：B-5</span></div>
     <div><b>Python</b><span class="it">Flask ・ SQLite ・ openpyxl</span><span class="wk">使った作品：B-1 B-4</span></div>
     <div><b>Google</b><span class="it">Apps Script ・ スプレッドシート</span><span class="wk">使った作品：B-1</span></div>
     <div><b>Windows</b><span class="it">PowerShell ・ Windows OCR</span><span class="wk">使った作品：B-3</span></div>
@@ -669,10 +796,11 @@ figcaption{margin-top:10px;font-size:12px;color:var(--ink-2);line-height:1.6}
     <nav aria-label="ほかのページ">
       <a href="https://kmatsumotoaicreate-sys.github.io/credentials/">資格ポートフォリオ →</a>
       <a href="https://github.com/kmatsumotoaicreate-sys">GitHub →</a>
-      <span class="upd">最終更新 2026.10.18</span>
+      <span class="upd">最終更新 2026.10.28</span>
     </nav>
     <details class="log"><summary>更新履歴</summary>
       <ul>
+        <li><time datetime="2026-10-28">2026.10.28</time><span>B-5 電子黒板合成ツールと P-3 とくてんボードを追加。B-5 に困りごとと成果を追記</span></li>
         <li><time datetime="2026-10-18">2026.10.18</time><span>ページ全体の構成を見直し。成果・作品カード・困りごと→工夫→成果の説明・できることの対応表・AIとの進め方にまとめ直した</span></li>
         <li><time datetime="2026-10-11">2026.10.11</time><span>P-2 スタンプ工房の説明と画面を最新版に更新（はじめの画面を3つのタブに変更、イラストのスタイル追加、バックアップ）</span></li>
         <li><time datetime="2026-10-09">2026.10.09</time><span>P-1 画像加工Proの説明と画面を最新版に更新。P-2 にホーム画面への追加を追記</span></li>

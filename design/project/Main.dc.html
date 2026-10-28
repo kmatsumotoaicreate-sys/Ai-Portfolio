@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>松本和晃 制作ノート 改善案</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Zen+Kaku+Gothic+Antique:wght@500;700;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0;background:#EEF1F0}
+a{color:#155F78}a:hover{color:#0E4456}
+a:focus-visible,button:focus-visible{outline:2px solid #155F78;outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.navlinks a{color:#1B2427;text-decoration:none}
+.navlinks a:hover{color:#155F78}
+.workcard{transition:border-color .15s,transform .15s}
+.workcard:hover{border-color:#155F78 !important;transform:translateY(-2px)}
+.workcard:hover .wt{color:#155F78}
+.arrow-sep{display:flex}
+@media (max-width:760px){
+  .arrow-sep{display:none}
+  .navlinks{display:none !important}
+  .collage{display:none !important}
+}
+@media (prefers-reduced-motion:reduce){.workcard{transition:none}.workcard:hover{transform:none}}
+</style>
+</helmet>
+<div style="font-family: 'BIZ UDPGothic', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif; color: #1B2427; background: #EEF1F0; font-size: 16px; line-height: 1.8">
+
+<!-- ナビ -->
+<header style="border-bottom: 1px solid #CBD3D2; background: #FAFBFA">
+  <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px">
+    <a href="#top" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #1B2427">
+      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 19px; letter-spacing: .08em">松本 和晃</span>
+      <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .08em; color: #4A5659">WORKS</span>
+    </a>
+    <nav class="navlinks" aria-label="ページ内の移動" style="display: flex; gap: 28px; font-size: 14px; font-weight: 700">
+      <a href="#results">成果</a>
+      <a href="#works">作ったもの</a>
+      <a href="#skills">できること</a>
+      <a href="#process">進め方</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section id="top" class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-top: 64px; padding-bottom: 56px">
+  <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+    <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .08em; color: #4A5659">
+      <span style="background: #1B2427; color: #FAFBFA; padding: 3px 10px; border-radius: 2px">道路橋点検士</span>
+      <span style="font-size: 14px">×</span>
+      <span style="background: #155F78; color: #FFFFFF; padding: 3px 10px; border-radius: 2px">CLAUDE CODE</span>
+    </p>
+    <h1 style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: clamp(34px, 5vw, 56px); line-height: 1.3; letter-spacing: .01em; text-wrap: balance">点検現場の困りごとを、<span style="background: linear-gradient(transparent 62%, #E5AE22 62%, #E5AE22 92%, transparent 92%)">AIと一緒に</span>道具にしています。</h1>
+    <p style="margin: 0; max-width: 34em; color: #4A5659">橋梁の定期点検に携わる実務者です。プログラミングの専門教育は受けていませんが、現場で時間がかかっている作業をClaude Codeに日本語で伝え、毎日の業務で使える道具に仕上げています。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+      <a href="#works" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; background: #155F78; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-weight: 700">作ったものを見る
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3.5 8.5L8 13l4.5-4.5"></path></svg></a>
+      <a href="#skills" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 1.5px solid #1B2427; color: #1B2427; text-decoration: none; border-radius: 4px; font-weight: 700">できることを見る</a>
+    </div>
+    <dl style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid #CBD3D2">
+      <div style="flex: 1 1 140px; padding: 14px 16px 0 0">
+        <dt style="font-size: 12px; color: #4A5659">作ったもの</dt>
+        <dd style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 30px; line-height: 1.3">6<span style="font-size: 15px; font-weight: 700; margin-left: 4px">件</span></dd>
+      </div>
+      <div style="flex: 1 1 140px; padding: 14px 16px 0 16px; border-left: 1px solid #CBD3D2">
+        <dt style="font-size: 12px; color: #4A5659">実際の業務で使用中</dt>
+        <dd style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 30px; line-height: 1.3">4<span style="font-size: 15px; font-weight: 700; margin-left: 4px">件</span></dd>
+      </div>
+      <div style="flex: 1 1 160px; padding: 14px 0 0 16px; border-left: 1px solid #CBD3D2">
+        <dt style="font-size: 12px; color: #4A5659">資格</dt>
+        <dd style="margin: 0; font-size: 14px; font-weight: 700; line-height: 1.6; padding-top: 4px">道路橋点検士<br>生成AIパスポート</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="collage" aria-hidden="true" style="flex: 1 1 440px; min-width: 0; position: relative; aspect-ratio: 5 / 4; max-width: 100%">
+    <div style="position: absolute; left: 0; top: 0; width: 66%; aspect-ratio: 1000 / 720; background: #FAFBFA; border: 1px solid #B9C3C2; border-radius: 6px; overflow: hidden; box-shadow: 0 18px 36px -24px rgba(27,36,39,.5)">
+      <img src="/_blob/21f7e2cb953f44e75b96df7c267ab9f6" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+    </div>
+    <div style="position: absolute; right: 0; top: 30%; width: 70%; aspect-ratio: 760 / 534; background: #FAFBFA; border: 1px solid #B9C3C2; border-radius: 6px; overflow: hidden; box-shadow: 0 22px 40px -22px rgba(27,36,39,.55)">
+      <img src="/_blob/ecc6dd0ccdb544b6d1eb5de94b81efb1" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+    </div>
+    <div style="position: absolute; left: 10%; bottom: 0; width: 24%; aspect-ratio: 390 / 640; border: 6px solid #1B2427; border-radius: 18px; overflow: hidden; background: #0F131A; box-shadow: 0 22px 40px -20px rgba(27,36,39,.6)">
+      <img src="/_blob/e613b6cd09fe8c8e9ad928be945cdade" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 0 40%">
+    </div>
+    <span style="position: absolute; right: 4%; top: 4%; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11px; letter-spacing: .08em; color: #5C4200; background: #E5AE22; padding: 3px 9px; border-radius: 2px">実際の画面</span>
+  </div>
+</section>
+
+<!-- 成果 -->
+<section id="results" aria-labelledby="res-h" style="background: #1B2427; color: #EEF1F0">
+  <div class="wrap" style="padding-top: 48px; padding-bottom: 52px; display: flex; flex-direction: column; gap: 26px">
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px">
+      <h2 id="res-h" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: .08em">導入して変わったこと</h2>
+      <p style="margin: 0; font-size: 13px; color: #B7C3C5">業務用の4件。数字はすべて実際の業務での結果です</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0">
+      <a href="#works" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 22px 20px 0; border-top: 2px solid #E5AE22; text-decoration: none; color: #EEF1F0">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .06em; color: #E5AE22">B-1 進捗の共有</span>
+        <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 40px; line-height: 1.2">約15秒</span>
+        <span style="font-size: 14px; line-height: 1.6">で全員の画面に反映</span>
+        <span style="font-size: 12px; color: #B7C3C5; line-height: 1.6">以前：紙で管理し、古い情報が残りがち</span>
+      </a>
+      <a href="#works" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 22px 20px 0; border-top: 2px solid #E5AE22; text-decoration: none; color: #EEF1F0">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .06em; color: #E5AE22">B-2 位置図の作成</span>
+        <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 40px; line-height: 1.2">その場で</span>
+        <span style="font-size: 14px; line-height: 1.6">一覧表を選ぶだけで地図資料が完成</span>
+        <span style="font-size: 12px; color: #B7C3C5; line-height: 1.6">以前：手作業で、丸1日かかることも</span>
+      </a>
+      <a href="#works" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 22px 20px 0; border-top: 2px solid #E5AE22; text-decoration: none; color: #EEF1F0">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .06em; color: #E5AE22">B-3 点検写真の仕分け</span>
+        <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 40px; line-height: 1.2">約1分</span>
+        <span style="font-size: 14px; line-height: 1.6">で1,000枚を橋ごとに仕分け</span>
+        <span style="font-size: 12px; color: #B7C3C5; line-height: 1.6">以前：橋ごとに手で振り分け</span>
+      </a>
+      <a href="#case-b4" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 0 20px 0; border-top: 2px solid #E5AE22; text-decoration: none; color: #EEF1F0">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .06em; color: #E5AE22">B-4 交通費の請求資料</span>
+        <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 40px; line-height: 1.2">1円単位</span>
+        <span style="font-size: 14px; line-height: 1.6">で請求額と照合</span>
+        <span style="font-size: 12px; color: #B7C3C5; line-height: 1.6">以前：明細を足しても請求額と合わない</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 作ったもの -->
+<section id="works" aria-labelledby="works-h" class="wrap" style="padding-top: 72px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 24px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <h2 id="works-h" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: .06em">AIと作ったもの</h2>
+      <p style="margin: 0; font-size: 14px; color: #4A5659">カードを選ぶと、困りごと・工夫・成果の詳しい説明へ移動します</p>
+    </div>
+    <div role="group" aria-label="作品の種類で絞り込む" style="display: flex; gap: 6px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px; padding: 4px">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+        <button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="{{ f.style }}">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px">
+    <sc-for list="{{ shown }}" as="w" hint-placeholder-count="6">
+      <a class="workcard" href="{{ w.href }}" style="flex: 1 1 320px; max-width: 100%; min-width: 0; display: flex; flex-direction: column; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 8px; overflow: hidden; text-decoration: none; color: #1B2427">
+        <div style="aspect-ratio: 16 / 10; background: #DCE8EC; border-bottom: 1px solid #CBD3D2; overflow: hidden; position: relative">
+          <sc-if value="{{ w.hasImg }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ w.img }}" alt="{{ w.alt }}" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: {{ w.pos }}">
+          </sc-if>
+          <sc-if value="{{ w.noImg }}" hint-placeholder-val="{{ false }}">
+            <svg role="img" aria-label="写真を橋ごとのフォルダーへ仕分ける流れの図" viewBox="0 0 320 200" style="display: block; width: 100%; height: 100%">
+              <rect x="40" y="36" width="52" height="40" rx="2" fill="#FAFBFA" stroke="#4A5659"></rect>
+              <rect x="102" y="36" width="52" height="40" rx="2" fill="#FAFBFA" stroke="#155F78" stroke-width="2"></rect>
+              <rect x="109" y="44" width="38" height="7" fill="#E5AE22"></rect>
+              <rect x="164" y="36" width="52" height="40" rx="2" fill="#FAFBFA" stroke="#4A5659"></rect>
+              <rect x="226" y="36" width="52" height="40" rx="2" fill="#FAFBFA" stroke="#155F78" stroke-width="2"></rect>
+              <rect x="233" y="44" width="38" height="7" fill="#E5AE22"></rect>
+              <path d="M160 92 V118 M152 110 L160 120 L168 110" fill="none" stroke="#155F78" stroke-width="2.5"></path>
+              <rect x="56" y="132" width="36" height="10" rx="2" fill="#E5AE22"></rect>
+              <rect x="56" y="138" width="96" height="40" rx="3" fill="#E5AE22"></rect>
+              <rect x="172" y="132" width="36" height="10" rx="2" fill="#E5AE22"></rect>
+              <rect x="172" y="138" width="96" height="40" rx="3" fill="#E5AE22"></rect>
+            </svg>
+          </sc-if>
+          <span style="position: absolute; left: 12px; top: 12px; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .06em; color: #FFFFFF; background: #155F78; padding: 2px 8px; border-radius: 2px">{{ w.code }}</span>
+          <span style="{{ w.kindStyle }}">{{ w.kind }}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 20px; flex: 1 1 auto">
+          <h3 class="wt" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 21px; line-height: 1.4">{{ w.title }}</h3>
+          <dl style="margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.65">
+            <div style="display: flex; gap: 10px">
+              <dt style="flex: none; width: 4.5em; font-size: 12px; color: #4A5659; padding-top: 2px">{{ w.l1 }}</dt>
+              <dd style="margin: 0; color: #4A5659">{{ w.before }}</dd>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <dt style="flex: none; width: 4.5em; font-size: 12px; color: #155F78; font-weight: 700; padding-top: 2px">{{ w.l2 }}</dt>
+              <dd style="margin: 0; font-weight: 700">{{ w.after }}</dd>
+            </div>
+          </dl>
+          <ul style="list-style: none; margin: auto 0 0; padding: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px">
+            <sc-for list="{{ w.tech }}" as="t" hint-placeholder-count="3">
+              <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; line-height: 1.5; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #EEF1F0">{{ t }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 詳しい説明（例：B-4・P-2） -->
+<section id="cases" aria-label="作品の詳しい説明" class="wrap" style="padding-top: 48px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 56px">
+
+  <article id="case-b4" style="display: flex; flex-direction: column; gap: 24px; padding-top: 40px; border-top: 2px solid #1B2427">
+    <div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+      <p style="margin: 0; display: flex; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .08em; color: #4A5659"><span style="color: #FFFFFF; background: #155F78; padding: 2px 8px; border-radius: 2px">B-4</span>業務用 ／ 経費精算</p>
+      <h3 style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 32px; line-height: 1.35">交通費請求資料作成</h3>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75">交通系ICカードの利用履歴（CSV）を読み込み、画面で確認・修正して、提出用のExcel一覧表を出力します。</p>
+    </div>
+    <ol aria-label="困りごとから成果まで" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px">
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #4A5659">1 困りごと</span>
+        <span style="font-size: 14.5px; line-height: 1.75">利用明細を見ながら請求資料を作成。PiTaPaは定期登録・区間指定の分が月額の定額になるため、明細を足しても実際の請求額と合わない。</span>
+      </li>
+      <li class="arrow-sep" aria-hidden="true" style="align-items: center; color: #155F78"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"></path></svg></li>
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #155F78">2 工夫</span>
+        <span style="font-size: 14.5px; line-height: 1.75">定額分と実費分を分けて、鉄道・バス会社ごとに集計。CSV末尾の支払額と照合し、合わないときだけ警告を出す。</span>
+      </li>
+      <li class="arrow-sep" aria-hidden="true" style="align-items: center; color: #155F78"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"></path></svg></li>
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #DCE8EC; border: 1px solid #155F78; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #155F78">3 成果</span>
+        <span style="font-size: 14.5px; line-height: 1.75">CSVを読み込むだけで提出用Excelが完成。<strong style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 18px; background: linear-gradient(transparent 66%, #E5AE22 66%, #E5AE22 94%, transparent 94%)">請求額と1円単位で照合</strong>済み。</span>
+      </li>
+    </ol>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+      <figure style="margin: 0; flex: 1 1 520px; min-width: 0">
+        <img src="/_blob/d1f4394ac2e36a55417fc8bcc2cfc0a7" alt="交通費請求資料作成アプリの画面。請求内訳と明細の表が並ぶ" style="display: block; width: 100%; height: auto; border: 1px solid #B9C3C2; border-radius: 6px; box-shadow: 0 18px 32px -22px rgba(27,36,39,.45)">
+        <figcaption style="margin-top: 10px; font-size: 12px; color: #4A5659; line-height: 1.6">氏名・駅名はデモデータに置き換えています。</figcaption>
+      </figure>
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <div>
+          <h4 style="margin: 0 0 8px; font-size: 14px; letter-spacing: .06em">主な機能</h4>
+          <ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; line-height: 1.7">
+            <li>PiTaPa・モバイルSuicaなどの形式と文字コードを自動で判別</li>
+            <li>土日祝をまとめて対象外にでき、外した分は合計にすぐ反映</li>
+            <li>いつもの通勤と違う経路を薄い黄色で示し、確認漏れを防ぐ</li>
+            <li>26項目の自動テストで、直すたびに計算結果を確認</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin: 0 0 8px; font-size: 14px; letter-spacing: .06em">自分が担当したこと</h4>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; padding: 12px 14px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">[この作品で自分が判断したこと・検証したことを1〜2文で]</p>
+        </div>
+        <ul aria-label="使った技術" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">Python</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">openpyxl</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">HTML / JavaScript</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">自動テスト</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article id="case-p2" style="display: flex; flex-direction: column; gap: 24px; padding-top: 40px; border-top: 2px solid #1B2427">
+    <div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+      <p style="margin: 0; display: flex; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .08em; color: #4A5659"><span style="color: #FFFFFF; background: #155F78; padding: 2px 8px; border-radius: 2px">P-2</span>個人制作 ／ スタンプ作成</p>
+      <h3 style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 32px; line-height: 1.35">スタンプ工房</h3>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75">写真から切り抜く方法と、手描き・ロゴ・ハンコなど一から作る方法で、オリジナルのスタンプを作るアプリです。</p>
+    </div>
+    <ol aria-label="内容から使い道まで" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px">
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #4A5659">1 作り方</span>
+        <span style="font-size: 14.5px; line-height: 1.75">写真から作る「切り抜き系」4つと、一から作る「製作系」4つ。はじめの画面のタブで切り替える。</span>
+      </li>
+      <li class="arrow-sep" aria-hidden="true" style="align-items: center; color: #155F78"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"></path></svg></li>
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #155F78">2 工夫</span>
+        <span style="font-size: 14.5px; line-height: 1.75">保存したスタンプは画像加工Proに自動で並ぶ。写真は端末の外に送らず、切り抜きや顔の検出も端末の中で処理する。</span>
+      </li>
+      <li class="arrow-sep" aria-hidden="true" style="align-items: center; color: #155F78"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 11h13M12 5.5L17.5 11 12 16.5"></path></svg></li>
+      <li style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #DCE8EC; border: 1px solid #155F78; border-radius: 6px">
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .1em; color: #155F78">3 使い道</span>
+        <span style="font-size: 14.5px; line-height: 1.75">PNG・動くGIFのほか、<strong style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 17px">LINEスタンプ申請用のZIP</strong>、Discord・Slackの絵文字、シール用紙への印刷で書き出せる。</span>
+      </li>
+    </ol>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+      <figure style="margin: 0; flex: 0 1 280px; min-width: 0">
+        <div style="border: 8px solid #1B2427; border-radius: 28px; overflow: hidden; background: #0F131A; box-shadow: 0 18px 32px -22px rgba(27,36,39,.5)">
+          <img src="/_blob/894d444a4757cf7a9ec4b81e9d24485f" alt="スタンプ工房のスマホ画面。ハンコ製作で日付印を作っている" style="display: block; width: 100%; height: auto">
+        </div>
+        <figcaption style="margin-top: 10px; font-size: 12px; color: #4A5659; line-height: 1.6; text-align: center">ハンコ製作（日付印）の画面。名前はサンプルです。</figcaption>
+      </figure>
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <div>
+          <h4 style="margin: 0 0 8px; font-size: 14px; letter-spacing: .06em">主な機能</h4>
+          <ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; line-height: 1.7">
+            <li>写真の中の欲しい物をタップするだけで、AIが範囲を選んで切り抜く</li>
+            <li>ハンコ製作は丸印・角印・日付印・矢印など8種類の形</li>
+            <li>アニメ調・水彩・油絵・版画などのスタイルでイラストに変換</li>
+            <li>スマホのホーム画面に追加でき、通信がないときでも開ける</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin: 0 0 8px; font-size: 14px; letter-spacing: .06em">自分が担当したこと</h4>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; padding: 12px 14px; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 6px">[この作品で自分が判断したこと・工夫したことを1〜2文で]</p>
+        </div>
+        <ul aria-label="使った技術" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">HTML / Canvas</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">MediaPipe</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">PWA</li>
+          <li style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11.5px; padding: 3px 8px; border: 1px solid #CBD3D2; border-radius: 3px; color: #4A5659; background: #FAFBFA">GIF / ZIP書き出し</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- できること -->
+<section id="skills" aria-labelledby="skills-h" class="wrap" style="padding-top: 72px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 22px">
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <h2 id="skills-h" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: .06em">できること</h2>
+    <p style="margin: 0; font-size: 14px; color: #4A5659">コードはClaude Codeが書きます。自分の役割は次の4つで、●はその力を示している作品です</p>
+  </div>
+  <div style="overflow-x: auto; background: #FAFBFA; border: 1px solid #CBD3D2; border-radius: 8px">
+    <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px">
+      <thead>
+        <tr style="border-bottom: 2px solid #1B2427">
+          <th scope="col" style="text-align: left; padding: 14px 20px; font-size: 13px; color: #4A5659; font-weight: 700">スキル</th>
+          <sc-for list="{{ codes }}" as="c" hint-placeholder-count="6">
+            <th scope="col" style="width: 68px; padding: 14px 4px; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; font-weight: 500; color: #155F78">{{ c }}</th>
+          </sc-for>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ skills }}" as="s" hint-placeholder-count="4">
+          <tr style="border-bottom: 1px solid #CBD3D2">
+            <th scope="row" style="text-align: left; padding: 16px 20px; font-weight: 400; vertical-align: top">
+              <span style="display: block; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 700; font-size: 17px; line-height: 1.5">{{ s.num }}　{{ s.title }}</span>
+              <span style="display: block; font-size: 13px; color: #4A5659; line-height: 1.65; margin-top: 2px">{{ s.ev }}</span>
+            </th>
+            <sc-for list="{{ s.cells }}" as="cell" hint-placeholder-count="6">
+              <td style="text-align: center; vertical-align: middle; padding: 8px 4px">
+                <sc-if value="{{ cell.on }}" hint-placeholder-val="{{ true }}">
+                  <span role="img" aria-label="{{ cell.label }}" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: #155F78"></span>
+                </sc-if>
+                <sc-if value="{{ cell.off }}" hint-placeholder-val="{{ false }}">
+                  <span aria-hidden="true" style="display: inline-block; width: 10px; height: 2px; background: #CBD3D2; vertical-align: middle"></span>
+                </sc-if>
+              </td>
+            </sc-for>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 進め方 -->
+<section id="process" aria-labelledby="proc-h" class="wrap" style="padding-top: 64px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 22px">
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <h2 id="proc-h" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: .06em">AIとの進め方</h2>
+    <p style="margin: 0; font-size: 14px; color: #4A5659">上が自分、下がClaude Codeの役割です</p>
+  </div>
+  <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px">
+    <sc-for list="{{ steps }}" as="p" hint-placeholder-count="4">
+      <li style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; border: 1px solid #CBD3D2; border-radius: 8px; overflow: hidden; background: #FAFBFA">
+        <div style="padding: 14px 18px 12px; border-bottom: 1px solid #CBD3D2">
+          <span style="display: block; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; letter-spacing: .08em; color: #155F78">STEP {{ p.n }}</span>
+          <span style="display: block; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 18px; line-height: 1.5">{{ p.title }}</span>
+        </div>
+        <div style="padding: 12px 18px; font-size: 14px; line-height: 1.7; flex: 1 1 auto">
+          <span style="display: block; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11px; letter-spacing: .1em; color: #4A5659">自分</span>{{ p.me }}
+        </div>
+        <div style="padding: 12px 18px; font-size: 14px; line-height: 1.7; background: #DCE8EC">
+          <span style="display: block; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 11px; letter-spacing: .1em; color: #155F78">CLAUDE CODE</span>{{ p.ai }}
+        </div>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
+<!-- 使った技術 -->
+<section aria-labelledby="tech-h" class="wrap" style="padding-top: 64px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 20px">
+  <h2 id="tech-h" style="margin: 0; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: .06em">使った技術</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 12px">
+    <sc-for list="{{ tech }}" as="g" hint-placeholder-count="5">
+      <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; border-top: 2px solid #155F78; background: #FAFBFA">
+        <span style="font-weight: 700; font-size: 15px">{{ g.name }}</span>
+        <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12.5px; color: #1B2427; line-height: 1.7">{{ g.items }}</span>
+        <span style="font-size: 12px; color: #4A5659">使った作品：{{ g.works }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer style="background: #1B2427; color: #EEF1F0">
+  <div class="wrap" style="padding-top: 40px; padding-bottom: 44px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px">
+    <div style="display: flex; flex-direction: column; gap: 6px; max-width: 520px">
+      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: .1em">松本 和晃</span>
+      <span style="font-size: 13px; color: #B7C3C5; line-height: 1.7">掲載画面の橋梁名・担当者名はサンプルです。発注者名などの業務情報は掲載していません。地図画像の出典：国土地理院（地理院タイル）。</span>
+    </div>
+    <nav aria-label="ほかのページ" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+      <a href="[資格ポートフォリオのURL]" style="color: #E5AE22; text-decoration: none; font-weight: 700">資格ポートフォリオ →</a>
+      <a href="https://github.com/kmatsumotoaicreate-sys" style="color: #E5AE22; text-decoration: none; font-weight: 700">GitHub →</a>
+      <span style="font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; color: #B7C3C5">最終更新 2026.10.18</span>
+    </nav>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":5600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'all' };
+  }
+  renderVals() {
+    const works = [
+      { code: 'B-1', kind: '業務用', biz: true, title: '業務進捗管理システム', href: '#results', img: '/_blob/ecc6dd0ccdb544b6d1eb5de94b81efb1', pos: '0 0', alt: '進捗表の画面。橋ごと・工程ごとのマスが色分けされている', l1: '困りごと', before: '紙の進捗表が更新されず、古い情報が残る', l2: '成果', after: '約15秒で全員の画面に反映', tech: ['Python / Flask', 'SQLite', 'Google Apps Script'] },
+      { code: 'B-2', kind: '業務用', biz: true, title: '位置マップ一覧', href: '#results', img: '/_blob/21f7e2cb953f44e75b96df7c267ab9f6', pos: '0 0', alt: '番号付きの旗が立った地図と一覧表の画面', l1: '困りごと', before: '橋の位置を手で調べて地図に印。丸1日かかることも', l2: '成果', after: '一覧表を選ぶだけで地図資料が完成', tech: ['HTML', 'Leaflet', 'SheetJS'] },
+      { code: 'B-3', kind: '業務用', biz: true, title: '写真の橋梁別分類', href: '#results', img: '', pos: '0 0', alt: '', l1: '困りごと', before: '1日で数百〜千枚の写真を、橋ごとに手で振り分け', l2: '成果', after: '1,000枚を約1分で仕分け', tech: ['PowerShell', 'Windows OCR'] },
+      { code: 'B-4', kind: '業務用', biz: true, title: '交通費請求資料作成', href: '#case-b4', img: '/_blob/d1f4394ac2e36a55417fc8bcc2cfc0a7', pos: '0 0', alt: '請求内訳と明細の表が並ぶ画面', l1: '困りごと', before: '明細を足しても請求額と合わない', l2: '成果', after: '請求額と1円単位で照合', tech: ['Python', 'openpyxl', '自動テスト'] },
+      { code: 'P-1', kind: '個人制作', biz: false, title: '画像加工Pro', href: '#works', img: '/_blob/e613b6cd09fe8c8e9ad928be945cdade', pos: '0 52%', alt: 'スタンプと集中線で飾った風景写真のスマホ画面', l1: '内容', before: '写真にスタンプ・文字・漫画風の加工', l2: '工夫', after: '顔の認識も人物の切り抜きもスマホの中で処理', tech: ['Canvas', 'MediaPipe', 'PWA'] },
+      { code: 'P-2', kind: '個人制作', biz: false, title: 'スタンプ工房', href: '#case-p2', img: '/_blob/894d444a4757cf7a9ec4b81e9d24485f', pos: '0 38%', alt: '日付印のハンコを作っているスマホ画面', l1: '内容', before: '写真の切り抜き・手描き・ロゴ・ハンコからスタンプを自作', l2: '使い道', after: 'LINEスタンプ申請用ZIPやシール印刷に書き出し', tech: ['Canvas', 'MediaPipe', 'PWA'] }
+    ];
+    const f = this.state.filter;
+    const shown = works
+      .filter((w) => f === 'all' || (f === 'biz' ? w.biz : !w.biz))
+      .map((w) => ({
+        ...w,
+        hasImg: !!w.img,
+        noImg: !w.img,
+        kindStyle: 'position: absolute; right: 12px; top: 12px; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; ' + (w.biz ? 'background: #E5AE22; color: #5C4200' : 'background: #FAFBFA; color: #1B2427; border: 1px solid #CBD3D2')
+      }));
+    const base = 'min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; ';
+    const filters = [['all', 'すべて（6）'], ['biz', '業務用（4）'], ['fun', '個人制作（2）']].map(([v, label]) => ({
+      label,
+      pressed: f === v ? 'true' : 'false',
+      style: base + (f === v ? 'background: #155F78; color: #FFFFFF' : 'background: transparent; color: #1B2427'),
+      pick: () => this.setState({ filter: v })
+    }));
+    const codes = ['B-1', 'B-2', 'B-3', 'B-4', 'P-1', 'P-2'];
+    const rows = [
+      { num: '1', title: '現場の困りごとを整理する', ev: '紙の進捗表、手作業の地図、写真の振り分けなど、時間がかかる作業を見つけて言葉にする', on: ['B-1', 'B-2', 'B-3', 'B-4'] },
+      { num: '2', title: '何を作るかを決める', ev: '社内LAN版とGoogle版を用意（B-1）、元の写真は動かさない（B-3）、写真を端末の外に送らない（P-1・P-2）', on: ['B-1', 'B-3', 'P-1', 'P-2'] },
+      { num: '3', title: '実際のデータで確かめる', ev: '請求額と1円単位で照合・26項目の自動テスト（B-4）、読み取りが怪しい写真に印（B-3）', on: ['B-3', 'B-4'] },
+      { num: '4', title: 'ほかの人が使える形に仕上げる', ev: '承認制の利用者登録（B-1）、ダブルクリックで実行（B-3）、使い方説明書の改訂（P-2）', on: ['B-1', 'B-3', 'P-2'] }
+    ];
+    const skills = rows.map((r) => ({
+      ...r,
+      cells: codes.map((c) => ({ on: r.on.includes(c), off: !r.on.includes(c), label: c + 'で発揮' }))
+    }));
+    const steps = [
+      { n: '1', title: '困りごとを言葉にする', me: '何に時間がかかっているか、どう使いたいかを日本語で伝える', ai: '作り方や設計の相談に乗る' },
+      { n: '2', title: '何を作るか決める', me: '使う人と場面に合わせて、形と守ることを決める', ai: 'コードを書いて試作する' },
+      { n: '3', title: '実際のデータで試す', me: '業務データで試し、合わない所や使いにくい所を見つける', ai: '指摘を受けて直す' },
+      { n: '4', title: '使える形に仕上げる', me: '操作説明書や導入手順を整える', ai: '説明書づくりを手伝う' }
+    ];
+    const tech = [
+      { name: 'Web画面', items: 'HTML / JavaScript ・ Canvas ・ Leaflet ・ SheetJS', works: 'B-1 B-2 B-4 P-1 P-2' },
+      { name: 'Python', items: 'Flask ・ SQLite ・ openpyxl', works: 'B-1 B-4' },
+      { name: 'Google', items: 'Apps Script ・ スプレッドシート', works: 'B-1' },
+      { name: 'Windows', items: 'PowerShell ・ Windows OCR', works: 'B-3' },
+      { name: 'AI・画像', items: 'MediaPipe（顔検出・切り抜き）', works: 'P-1 P-2' }
+    ];
+    return { shown, filters, codes, skills, steps, tech };
+  }
+}
+</script>
+</body>
+</html>
